@@ -43,10 +43,10 @@ let RutasService = class RutasService {
         return this.rutaRepository.save(nuevaRuta);
     }
     async obtenerrutas() {
-        return this.rutaRepository.find();
+        return this.rutaRepository.find({ relations: ['cooperativa'] });
     }
     async obtenerRutaPorId(numero_ruta) {
-        const ruta = await this.rutaRepository.findOne({ where: { numero_ruta } });
+        const ruta = await this.rutaRepository.findOne({ where: { numero_ruta }, relations: ['cooperativa'] });
         if (!ruta) {
             throw new common_1.NotFoundException(`Ruta con numero ${numero_ruta} no encontrada.`);
         }

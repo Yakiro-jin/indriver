@@ -1,8 +1,8 @@
 import { Body, Controller, Get, Patch, Post } from '@nestjs/common';
 import { RutasService } from './rutas.service';
 import { create } from 'domain';
-import { CreateRutasDto } from 'src/dtos/Create_Rutas.dto';
-import { UpdateRutaDto } from 'src/dtos/Updatedto.dto';
+import { CreateRutasDto } from 'src/dtos/rutasdto/Create_Rutas.dto';
+import { UpdateRutaDto } from 'src/dtos/rutasdto/Updatedto.dto';
 
 @Controller('rutas')
 export class RutasController {

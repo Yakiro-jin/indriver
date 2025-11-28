@@ -1,5 +1,5 @@
-import { CreateCooperativaDto } from 'src/dtos/Create_cooperativa.dto';
-import { UpdateCooperativaDto } from 'src/dtos/Updatecooperativa.dto';
+import { CreateCooperativaDto } from 'src/dtos/cooperativadto/Create_cooperativa.dto';
+import { UpdateCooperativaDto } from 'src/dtos/cooperativadto/Updatecooperativa.dto';
 import { CooperativaEntity } from 'src/entidades/cooperativa.entity';
 import { Repository } from 'typeorm';
 export declare class CooperativaService {

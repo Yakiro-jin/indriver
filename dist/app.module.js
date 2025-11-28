@@ -14,6 +14,7 @@ const app_service_1 = require("./app.service");
 const websocket_module_1 = require("./websocket/websocket.module");
 const rutas_module_1 = require("./rutas/rutas.module");
 const coperativa_module_1 = require("./coperativa/coperativa.module");
+const vehiculos_module_1 = require("./vehiculos/vehiculos.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -31,7 +32,8 @@ exports.AppModule = AppModule = __decorate([
             }),
             websocket_module_1.WebsocketModule,
             rutas_module_1.RutasModule,
-            coperativa_module_1.CoperativaModule],
+            coperativa_module_1.CoperativaModule,
+            vehiculos_module_1.VehiculosModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })

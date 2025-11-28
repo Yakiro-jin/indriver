@@ -13,6 +13,7 @@ exports.CooperativaEntity = void 0;
 const typeorm_1 = require("typeorm");
 const class_validator_1 = require("class-validator");
 const ruta_entity_1 = require("./ruta.entity");
+const vehiculos_entity_1 = require("./vehiculos.entity");
 let CooperativaEntity = class CooperativaEntity {
     rif_cooperativa;
     nombre;
@@ -20,6 +21,7 @@ let CooperativaEntity = class CooperativaEntity {
     descripcion;
     horario;
     rutas;
+    unidad;
 };
 exports.CooperativaEntity = CooperativaEntity;
 __decorate([
@@ -51,6 +53,10 @@ __decorate([
     (0, typeorm_1.OneToMany)(() => ruta_entity_1.RutaEntity, ruta => ruta.cooperativa),
     __metadata("design:type", Array)
 ], CooperativaEntity.prototype, "rutas", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => vehiculos_entity_1.VehiculosEntity, vehiculo => vehiculo.cooperativa),
+    __metadata("design:type", Array)
+], CooperativaEntity.prototype, "unidad", void 0);
 exports.CooperativaEntity = CooperativaEntity = __decorate([
     (0, typeorm_1.Entity)('cooperativa')
 ], CooperativaEntity);

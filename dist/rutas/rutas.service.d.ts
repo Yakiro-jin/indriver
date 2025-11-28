@@ -1,5 +1,5 @@
-import { CreateRutasDto } from 'src/dtos/Create_Rutas.dto';
-import { UpdateRutaDto } from 'src/dtos/Updatedto.dto';
+import { CreateRutasDto } from 'src/dtos/rutasdto/Create_Rutas.dto';
+import { UpdateRutaDto } from 'src/dtos/rutasdto/Updatedto.dto';
 import { CooperativaEntity } from 'src/entidades/cooperativa.entity';
 import { RutaEntity } from 'src/entidades/ruta.entity';
 import { Repository } from 'typeorm';

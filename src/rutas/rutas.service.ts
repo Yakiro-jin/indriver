@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CreateRutasDto } from 'src/dtos/Create_Rutas.dto';
-import { UpdateRutaDto } from 'src/dtos/Updatedto.dto';
+import { CreateRutasDto } from 'src/dtos/rutasdto/Create_Rutas.dto';
+import { UpdateRutaDto } from 'src/dtos/rutasdto/Updatedto.dto';
 import { CooperativaEntity } from 'src/entidades/cooperativa.entity';
 import { RutaEntity } from 'src/entidades/ruta.entity';
 import { Repository } from 'typeorm';
@@ -35,12 +35,12 @@ async crearRuta(createRutadto:CreateRutasDto) : Promise<RutaEntity> {
 
 
 async obtenerrutas(): Promise<RutaEntity[]> {
-    return this.rutaRepository.find();
+    return this.rutaRepository.find({ relations: ['cooperativa'] });
 }
 
 
  async obtenerRutaPorId(numero_ruta: string): Promise<RutaEntity> {
-    const ruta = await this.rutaRepository.findOne({where:{numero_ruta}});
+    const ruta = await this.rutaRepository.findOne({where:{numero_ruta}, relations: ['cooperativa'] });
     if(!ruta){
         throw new NotFoundException(`Ruta con numero ${numero_ruta} no encontrada.`);
     }

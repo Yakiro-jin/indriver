@@ -1,6 +1,7 @@
 import { Column, Entity, ManyToMany, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
 import { IsEmail, IsNotEmpty, Min, Max } from 'class-validator';
 import { RutaEntity } from "./ruta.entity";
+import { VehiculosEntity } from "./vehiculos.entity";
 
 @Entity('cooperativa')
 export class CooperativaEntity {
@@ -32,4 +33,7 @@ export class CooperativaEntity {
     @OneToMany(() => RutaEntity, ruta => ruta.cooperativa)
     rutas: RutaEntity[];
 
+
+    @OneToMany(() => VehiculosEntity, vehiculo => vehiculo.cooperativa)
+    unidad: VehiculosEntity[];
 }
